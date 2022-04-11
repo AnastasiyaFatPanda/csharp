@@ -9,6 +9,7 @@
     Penguin penguin = new Penguin("Penguin", 13, Gender.Female, 21.7);
 
     // set wrong weight
+    Console.WriteLine("set wrong weight");
     try
     {
       dog.Weight = 0;
@@ -19,13 +20,20 @@
     }
 
     // call specific methods
+    Console.WriteLine("\n\ncall specific methods");
     dogNoname.Bark();
     penguin.Dive();
+
+    // call common method
+    Console.WriteLine("\n\ncall common method");
+    cat.Move();
+    penguin.Move();
 
     Group<Dog> dogsGroup = new Group<Dog>("Dogs", new List<Dog>() { dog, dogNoname });
     Group<Cat> catsGroup = new Group<Cat>("Cats", new List<Cat>() { cat });
     Group<Bird> birdsGroup = new Group<Bird>("Birds", new List<Bird>() { eagle, penguin });
 
+    Console.WriteLine("\n\nGet group's info");
     dogsGroup.GetInfo();
     catsGroup.GetInfo();
     birdsGroup.GetInfo();
