@@ -7,6 +7,7 @@ namespace ConsoleApp
   {
     private string name;
     private int age;
+    public bool testFieldForTypeInfo;
     public string Name
     {
       get { return name; }
@@ -43,7 +44,8 @@ namespace ConsoleApp
     public void GetInfo()
     {
       string info = "";
-      foreach (PropertyInfo prop in this.GetType().GetProperties()) {
+      foreach (PropertyInfo prop in this.GetType().GetProperties())
+      {
         info += $"{prop.Name}: {prop.GetValue(this, null)}; ";
       }
       Console.WriteLine(info);
@@ -76,6 +78,7 @@ namespace ConsoleApp
   public class Girl : Human
   {
     public string Adress { get; set; }
+    public bool testFieldForTypeInfoGirl;
     public override Gender Gender
     {
       get => Gender.Female;
